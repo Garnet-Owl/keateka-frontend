@@ -41,7 +41,7 @@ The frontend application for KeaTeka, a cleaning service marketplace designed fo
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/your-org/keateka-frontend.git
+git clone https://github.com/Garnet-Owl/keateka-frontend.git
 cd keateka-frontend
 ```
 
@@ -171,7 +171,7 @@ feature/
 
 ## Links
 
-- [Backend Repository](https://github.com/your-org/keateka-backend)
+- [Backend Repository](https://github.com/Garnet-Owl/keateka-backend)
 - [API Documentation](https://api.keateka.com/docs)
 - [Design System](https://ui.keateka.com)
 - [Production](https://keateka.com)
