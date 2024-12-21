@@ -61,6 +61,24 @@ cp .env.example .env.local
 pnpm dev
 ```
 
+```
+For development:
+
+bashCopy# Start all services in development mode
+docker compose -f docker-compose.dev.yml up --build
+
+# Or specific services
+docker compose -f docker-compose.dev.yml up frontend backend
+
+For production:
+
+bashCopy# Start all services
+docker compose up --build
+
+# Or specific services
+docker compose up frontend backend
+```
+
 The application will be available at `http://localhost:3000`
 
 ## Project Structure

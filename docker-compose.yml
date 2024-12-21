@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      target: deps
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+      - NEXT_PUBLIC_WS_URL=ws://localhost:8000/ws
+      - NEXT_TELEMETRY_DISABLED=1
+    volumes:
+      - .:/app:delegated
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - frontend_network
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    # Enable for debugging
+    # stdin_open: true
+    # tty: true
+
+networks:
+  frontend_network:
+    driver: bridge

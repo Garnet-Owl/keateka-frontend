@@ -1,0 +1,54 @@
+# Dependencies
+node_modules
+npm-debug.log*
+
+# Testing
+coverage
+.nyc_output
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# Next.js
+.next
+out
+dist
+build
+.vercel
+
+# IDE
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Repository
+.git
+.gitignore
+README.md
+CHANGELOG.md
+docker-compose*.yml
+Dockerfile*
+
+# Development
+*.log
+*.md
+tests/
+__tests__/
+.eslintrc*
+.prettierrc*
+.editorconfig
+jest.config.*
+tsconfig.tsbuildinfo
