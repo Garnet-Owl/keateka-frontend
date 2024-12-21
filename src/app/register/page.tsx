@@ -1,32 +1,37 @@
 "use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { authApi } from '@/lib/api/auth';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { authApi } from "@/lib/api/auth";
 
 export default function RegisterPage() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError('');
+    setError("");
     setIsLoading(true);
 
     const formData = new FormData(e.currentTarget);
     const data = {
-      email: formData.get('email') as string,
-      password: formData.get('password') as string,
-      fullName: formData.get('fullName') as string,
-      phoneNumber: formData.get('phoneNumber') as string,
-      role: 'client' as const,
+      email: formData.get("email") as string,
+      password: formData.get("password") as string,
+      fullName: formData.get("fullName") as string,
+      phoneNumber: formData.get("phoneNumber") as string,
+      role: "client" as const,
     };
 
     try {
@@ -35,13 +40,13 @@ export default function RegisterPage() {
         email: data.email,
         password: data.password,
       });
-      
-      localStorage.setItem('token', auth.accessToken);
-      localStorage.setItem('refreshToken', auth.refreshToken);
-      
-      router.push('/dashboard');
+
+      localStorage.setItem("token", auth.accessToken);
+      localStorage.setItem("refreshToken", auth.refreshToken);
+
+      router.push("/dashboard");
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Registration failed');
+      setError(err instanceof Error ? err.message : "Registration failed");
     } finally {
       setIsLoading(false);
     }
@@ -56,7 +61,7 @@ export default function RegisterPage() {
             Enter your details to get started
           </p>
         </CardHeader>
-        
+
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">
             {error && (
@@ -64,7 +69,7 @@ export default function RegisterPage() {
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
-            
+
             <div className="space-y-2">
               <Label htmlFor="fullName">Full Name</Label>
               <Input
@@ -118,18 +123,14 @@ export default function RegisterPage() {
           </CardContent>
 
           <CardFooter className="flex flex-col space-y-4">
-            <Button 
-              type="submit" 
-              className="w-full"
-              disabled={isLoading}
-            >
-              {isLoading ? 'Creating account...' : 'Create account'}
+            <Button type="submit" className="w-full" disabled={isLoading}>
+              {isLoading ? "Creating account..." : "Create account"}
             </Button>
-            
+
             <p className="text-sm text-center text-muted-foreground">
-              Already have an account?{' '}
-              <Link 
-                href="/login" 
+              Already have an account?{" "}
+              <Link
+                href="/login"
                 className="text-primary hover:underline font-medium"
               >
                 Sign in

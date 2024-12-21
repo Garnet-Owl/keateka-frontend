@@ -22,6 +22,7 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigation = [
+    { name: "Dashboard", href: "/" },
     { name: "Jobs", href: "/jobs" },
     { name: "Payments", href: "/payments" },
     { name: "Reviews", href: "/reviews" },
@@ -69,7 +70,7 @@ export function Header() {
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="w-[240px] sm:w-[300px]">
+          <SheetContent className="w-[240px] sm:w-[300px]">
             <nav className="flex flex-col space-y-4">
               {user &&
                 navigation.map((item) => (
