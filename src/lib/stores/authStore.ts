@@ -2,9 +2,10 @@ import { create } from "zustand";
 
 type User = {
   id: string;
-  name: string;
+  fullName: string;
   email: string;
   role: "client" | "cleaner" | "admin";
+  isVerified: boolean;
 };
 
 type AuthState = {

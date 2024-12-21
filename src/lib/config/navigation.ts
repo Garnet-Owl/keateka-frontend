@@ -2,6 +2,11 @@ import { Home, BellRing, Calendar, Users, Settings } from 'lucide-react'
 
 export const mainNav = [
   {
+    title: 'Dashboard',
+    href: '/dashboard',
+    icon: Home
+  },
+  {
     title: 'Jobs',
     href: '/jobs',
     icon: Calendar

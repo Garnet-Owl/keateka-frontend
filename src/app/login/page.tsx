@@ -37,7 +37,7 @@ export default function LoginPage() {
       localStorage.setItem("refreshToken", auth.refreshToken);
 
       const profile = await authApi.getProfile();
-      setUser(profile);
+      setUser({ ...profile, id: profile.id.toString() });
 
       router.push("/dashboard");
     } catch (err) {
