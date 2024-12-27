@@ -4,16 +4,16 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, Bell, User, LogOut } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "../../components/ui/sheet";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { useAuthStore } from "@/lib/stores/authStore";
-import { authApi } from "@/lib/api/auth";
+} from "../../components/ui/dropdown-menu";
+import { Button } from "../../components/ui/button";
+import { useAuthStore } from "../../lib/stores/authStore";
+import { authApi } from "../../lib/api/auth";
 
 export function Header() {
   const router = useRouter();

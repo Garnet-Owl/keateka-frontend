@@ -1,4 +1,4 @@
-import { API_ENDPOINTS } from "@/lib/constants";
+import { API_ENDPOINTS } from "../constants";
 
 export interface LoginRequest {
   email: string;

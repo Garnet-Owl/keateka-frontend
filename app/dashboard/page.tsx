@@ -1,6 +1,6 @@
 import {Suspense} from "react";
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
-import {DashboardMetrics} from "@/app/dashboard/components/DashboardMetrics";
+import {Card, CardContent, CardHeader, CardTitle} from "../../components/ui/card";
+import {DashboardMetrics} from "./components/DashboardMetrics";
 
 // Loading skeleton for metrics
 function MetricsSkeleton() {

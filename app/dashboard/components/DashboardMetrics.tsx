@@ -1,7 +1,7 @@
 "use client";
 
-import { useAuthStore } from "@/lib/stores/authStore";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useAuthStore } from "../../../lib/stores/authStore";
+import { Card, CardContent, CardHeader, CardTitle } from "../../../components/ui/card";
 import { Calendar, Clock, DollarSign, Users } from "lucide-react";
 
 export function DashboardMetrics() {
